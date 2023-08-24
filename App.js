@@ -1,4 +1,5 @@
 import { Platform, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import { Home, Reveal, Share, Spin, Redeem } from "./screens";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -13,6 +14,7 @@ const Tab = createBottomTabNavigator();
 const screenOptions = {
   tabBarShowLabel: false,
   headerShow: false,
+  headerShown: false,
   tabBarStyle: {
     position: "absolute",
     bottom: 0,
@@ -20,13 +22,14 @@ const screenOptions = {
     left: 0,
     elevation: 0,
     height: 60,
-    width: 380,
+    width: Platform.OS == "ios" ? 380 : 360,
     background: "#00224F",
   },
 };
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar style="light" />
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen
           name="Home"
@@ -68,7 +71,7 @@ export default function App() {
               return (
                 <View
                   style={{
-                    top: Platform.OS == "ios" ? -1 : -20,
+                    top: Platform.OS == "ios" ? -1 : -10,
                     width: Platform.OS == "ios" ? 50 : 60,
                     height: Platform.OS == "ios" ? 50 : 60,
                     borderRadius: Platform.OS == "ios" ? 25 : 30,

@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "Spin N Win",
-    "slug": "Spin",
+    "slug": "Spin-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/Splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#00224F"
     },
